@@ -21,7 +21,7 @@
             flex-wrap: wrap;
             padding-top: 200px;
         }
-        
+
     }
     &__photo-and-sub {
         display: -webkit-flex;
@@ -30,7 +30,7 @@
         display: -o-flex;
         display: flex;
         flex-direction: column;
-        
+
         @media (max-width: 1750px) {
             width: 650px;
         }
@@ -101,8 +101,6 @@
         }
     }
     &-desc__title {
-        font-size: 3.125em;
-        font-weight: 800;
         line-height: 1.05em;
     }
     &-desc__subtitle {

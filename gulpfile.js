@@ -9,19 +9,20 @@ var pug = require("gulp-pug");
 var del = require("del");
 var rs = require("run-sequence");
 
-gulp.task( 'server', ['scss', 'pug', 'copy:js', 'copy:libs', 'copy:img', 'copy:fonts'], function(){
+gulp.task( 'server', ['scss', 'pug', 'copy:js', 'copy:libs', 'copy:img', 'copy:fonts', 'copy:php'], function(){
     bs.init({
         server: {
             baseDir: 'build/'
         }
     });
-    
+
     gulp.watch( 'src/pug/**/*.*', ['pug'] );
     gulp.watch( 'src/assets/scss/**/*.scss', ['scss'] );
     gulp.watch( 'src/assets/js/**/*.js', ['copy:js'] );
     gulp.watch( 'src/assets/libs/**/*.*', ['copy:libs'] );
     gulp.watch( 'src/assets/img/**/*.*', ['copy:img'] );
     gulp.watch( 'src/assets/fonts/**/*.*', ['copy:fonts'] );
+    gulp.watch( 'src/**/*.php', ['copy:php'] );
     gulp.watch( 'src/assets/js/**/*.js').on('change', bs.reload );
 });
 gulp.task('scss', function () {
@@ -40,7 +41,7 @@ gulp.task('scss', function () {
             browsers: ['last 5 versions'],
             cascade: false
         }) )
-        .pipe( sourcemaps.write() )        
+        .pipe( sourcemaps.write() )
         .pipe( gulp.dest('build/assets/css') )
         .pipe( bs.stream() );
 });
@@ -64,18 +65,24 @@ gulp.task('copy:js', function(){
     return gulp.src('src/assets/js/**/*.*')
         .pipe( gulp.dest('build/assets/js') )
         .pipe( bs.stream() );
-    
+
 });
 gulp.task('copy:libs', function(){
     return gulp.src('src/assets/libs/**/*.*')
         .pipe( gulp.dest('build/assets/libs') )
         .pipe( bs.stream() );
 });
+gulp.task('copy:php', function(){
+    return gulp.src('src/**/*.php')
+        .pipe( gulp.dest('build') )
+        .pipe( bs.stream() );
+});
+
 gulp.task('copy:img', function(){
     gulp.src('src/assets/img/**/*.*')
         .pipe( gulp.dest('build/assets/img') )
         .pipe( bs.stream() );
-    
+
     gulp.src('src/images/**/*.*')
         .pipe( gulp.dest('build/images') )
         .pipe( bs.stream() );
