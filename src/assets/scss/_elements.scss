@@ -1,17 +1,36 @@
-.advantages {}
-
-.advantages__item {}
-
-.advantages__icon-wrpr {
-    .advantages__img {
-        &.icon {}
+.advantages {
+    margin-top: 95px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column; 
+    &__item {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-top: 70px;
+        &:first-child{ margin-top: 0; }
     }
-    .advantages__img {
-        &.icon {}
+    &__icon-wrpr {
+        width: 115px;
+        margin-right: 55px;
+        &_drop{
+            padding-right: 10px;
+        }
     }
-    br {}
-}
-
-.advantages__text {
-    br {}
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+    &__text {
+        font-size: 1.875em;
+        font-weight: 800;
+        line-height: 1.2em;
+    }
 }
