@@ -6,7 +6,9 @@ html(lang='RU-ru')
     body
         
         include parts/_header.pug
-        include parts/_footer.pug
+        
+        main.row
+            include blocks/_b-main.pug
         
         script(src='assets/libs/jquery/jquery-3.3.1.min.js')
         script(src='assets/libs/underscore/underscore-min.js')
