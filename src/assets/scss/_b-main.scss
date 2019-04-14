@@ -1,0 +1,58 @@
+.main {
+    &.row {}
+    &__container {
+        padding-top: 100px;
+    }
+    &__photo-and-sub {
+        float: left;
+    }
+    
+    &__photo-wrpr {
+        position: relative;
+    }
+    &__photo {
+        position: relative;
+        z-index: 5;
+    }
+    &__shadow {
+        position: absolute;
+        z-index: 1;
+        width: 167%;
+        height: auto;
+        left: -7%;
+        bottom: -8%;
+    }
+    &__plants-1 {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 6%;
+        transform: translateY(-86%);
+    }
+    &__plants-2 {
+        position: absolute;
+        z-index: 1;
+            right: 0;
+    transform: translateX(99%);
+    bottom: 12%;
+    }
+    
+    &__sub {
+        p {
+            b {
+                b {}
+                br {}
+            }
+            br {}
+        }
+    }
+    &-desc {}
+    &-desc__title {
+        p {}
+        br {}
+    }
+    &-desc__subtitle {
+        p {}
+        br {}
+    }
+}
