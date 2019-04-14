@@ -1,0 +1,36 @@
+.navigation {
+    font-size: 1.68em;
+    font-weight: 800;
+    margin-right: 40px;
+    &__list {
+        list-style: none;
+        height: 100%;
+        width: 1235px;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+        text-transform: lowercase;
+        align-items: stretch;
+    }
+    &__list-item {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.2em;
+        &:first-child{ margin-left: 0; }
+        &:last-child{ margin-right: 0; }
+    }
+    &__list-item_active {}
+    &__list-item_black {
+        font-weight: 900;
+    }
+    &__link {
+        &:hover {}
+    }
+}
