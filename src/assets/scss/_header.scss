@@ -1,6 +1,19 @@
 .header {
     height: 125px;
     background-color: $c-yellow;
+    position: relative;
+    z-index: 10;
+    @media (max-width: 1100px){
+        height: auto;
+        padding-top: 25px;
+    }
+    @media (max-width: 700px) {
+        height: 80px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+    }
     
     a{
         color: inherit;
@@ -8,7 +21,6 @@
     }
     
     &__container {
-        padding-left: 160px;
         height: 100%;
         display: -webkit-flex;
         display: -moz-flex;
@@ -17,6 +29,21 @@
         display: flex;
         justify-content: space-between;
         align-items: stretch;
+        
+        @media (min-width: 1800px) {
+            padding-left: 160px;
+        }
+        @media (max-width: 1500px) {
+            font-size: 0.8em;
+        }
+        @media (max-width: 1300px) {
+            font-size: 0.65em;
+        }
+        @media (max-width: 1100px) {
+            flex-wrap: wrap;
+//            font-size: 1em;
+        }
+        
     }
     &__logo {
         font-weight: 800;
@@ -28,6 +55,8 @@
         display: -o-flex;
         display: flex;
         align-items: center;
+        white-space: nowrap;
+        margin-right: 40px;
 //        letter-spacing: 0.005em;
         &:hover{
         }
