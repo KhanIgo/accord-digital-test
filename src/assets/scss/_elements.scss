@@ -6,6 +6,9 @@
     display: -o-flex;
     display: flex;
     flex-direction: column; 
+    @media (max-width: 980px) {
+        margin-top: 40px;
+    }
     &__item {
         display: -webkit-flex;
         display: -moz-flex;
@@ -16,12 +19,19 @@
         align-items: flex-end;
         margin-top: 70px;
         &:first-child{ margin-top: 0; }
+        @media (max-width: 980px){
+            margin-top: 30px;
+        }
     }
     &__icon-wrpr {
         width: 115px;
         margin-right: 55px;
         &_drop{
             padding-right: 10px;
+        }
+        @media (max-width: 980px){
+            width: 70px;
+            margin-right: 20px;
         }
     }
     &__img {
