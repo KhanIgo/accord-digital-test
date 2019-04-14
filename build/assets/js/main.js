@@ -38,3 +38,33 @@ jQuery( $ => {
         });    
     });
 });
+
+[].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+  img.setAttribute('src', img.getAttribute('data-src'));
+  img.onload = function() {
+ img.removeAttribute('data-src');
+  };
+});
+
+window.onload = incoming_animations();
+function incoming_animations(){
+    //animate photos
+    let ph1 = document.querySelector('.main__photo'), 
+        plants1 = document.querySelector('.main__plants-1'),
+        plants2 = document.querySelector('.main__plants-2'),
+        shadow =document.querySelector('.main__shadow');
+    
+    TweenLite.from(ph1, 1, {opacity:0, left:"-=500px"});
+    TweenLite.from(plants1, 1, {opacity:0, top:"50%", delay:1});
+    TweenLite.from(plants2, 1, {opacity:0, right:"25%", bottom:"7%", delay:1.5});
+    TweenLite.from(shadow, 1, {opacity:0, delay:2.5});
+    
+    let t1  = document.querySelector('.main-desc__title'),
+        t2  = document.querySelector('.main-desc__subtitle'),
+        t3  = document.querySelector('.advantages');
+    
+    TweenLite.from(t1, 1, {opacity:0, delay:2.5});
+    TweenLite.from(t2, 1, {opacity:0, delay:3});
+    TweenLite.from(t3, 1, {opacity:0, delay:3.5});
+}
+
